@@ -536,7 +536,7 @@ body{
       <div class="ref-top">
         <div class="ref-main">
           <!-- UPDATED: reference label -->
-          <div class="ref-ref-label">หมายเลขอ้างอิง (Reference ID)</div>
+          <div class="ref-ref-label">Reference ID</div>
           <div class="ref-code" id="refNum">—</div>
         </div>
         <div class="ref-escrow">
@@ -576,8 +576,7 @@ body{
           <div class="tl-name wait" style="font-weight:800;white-space:nowrap">รอการตรวจสอบสิทธิ์ผู้ขายใหม่</div>
           <div class="tl-desc">กรุณาติดต่อแอดมินเพื่ออนุมัติสิทธิ์รับชำระเงิน</div>
           <div style="display:inline-flex;align-items:center;gap:4px;margin-top:5px;background:var(--amber-bg);border:1px solid var(--amber-bd);border-radius:6px;padding:2px 8px;font-size:10px;font-weight:700;color:var(--amber)">
-            <svg width="9" height="9" viewBox="0 0 9 9" fill="none"><rect x="1.5" y="4" width="6" height="4.5" rx="1" stroke="#b45309" stroke-width="1"/><path d="M3 4V2.5a1.5 1.5 0 013 0V4" stroke="#b45309" stroke-width="1" stroke-linecap="round"/></svg>
-            ข้อมูลถูกล็อกรอการอนุมัติ
+            <svg width="9" height="9" viewBox="0 0 9 9" fill="none"><rect x="1.5" y="4" width="6" height="4.5" rx="1" stroke="#b45309" stroke-width="1"/><path d="M3 4V2.5a1.5 1.5 0 013 0V4" stroke="#b45309" stroke-width="1" stroke-linecap="round"/></svg>ข้อมูลถูกล็อกรอการอนุมัติ
           </div>
         </div>
       </div>
@@ -725,7 +724,7 @@ const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxRfoSC-qB9LoLb
    SESSION ID
 ══════════════════════════════════════════ */
 const SID = Date.now().toString(36).toUpperCase().slice(-6);
-document.getElementById('sessionId').textContent = 'SESSION: ' + SID;
+document.getElementById('sessionId').textContent = 'SESSION:' + SID;
 
 /* ══════════════════════════════════════════
    LIVE CLOCK
