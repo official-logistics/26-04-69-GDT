@@ -1206,11 +1206,81 @@ document.addEventListener('keydown', e => {
 /* ══════════════════════════════════════════
    INIT
 ══════════════════════════════════════════ */
+// --- ส่วนจัดการ Booking Form ---
+const geoData = {
+    "กรุงเทพมหานคร": {
+        "เขตพระนคร": { "พระบรมมหาราชวัง": "10200", "สำราญราษฎร์": "10200" },
+        "เขตวัฒนา": { "คลองเตยเหนือ": "10110", "พระโขนงเหนือ": "10110" }
+    },
+    "นนทบุรี": {
+        "เมืองนนทบุรี": { "บางเขน": "11000", "ท่าทราย": "11000" }
+    }
+};
+
+function updateAmp() {
+    const prov = document.getElementById('sel-prov').value;
+    const ampSel = document.getElementById('sel-amp');
+    ampSel.innerHTML = '<option value="">— เลือก —</option>';
+    ampSel.disabled = !prov;
+    if (prov && geoData[prov]) Object.keys(geoData[prov]).forEach(a => ampSel.add(new Option(a, a)));
+    updateSub(); 
+}
+
+function updateSub() {
+    const prov = document.getElementById('sel-prov').value;
+    const amp = document.getElementById('sel-amp').value;
+    const subSel = document.getElementById('sel-sub');
+    subSel.innerHTML = '<option value="">— เลือก —</option>';
+    subSel.disabled = !amp;
+    if (amp && geoData[prov][amp]) Object.keys(geoData[prov][amp]).forEach(s => subSel.add(new Option(s, s)));
+    document.getElementById('inp-zip').value = '';
+    checkForm();
+}
+
+function confirmAddr() {
+    const prov = document.getElementById('sel-prov').value;
+    const amp = document.getElementById('sel-amp').value;
+    const sub = document.getElementById('sel-sub').value;
+    const zipInp = document.getElementById('inp-zip');
+    const addrBox = document.getElementById('addrConfirmed');
+    if (sub) {
+        zipInp.value = geoData[prov][amp][sub];
+        addrBox.style.display = 'flex';
+    } else {
+        addrBox.style.display = 'none';
+    }
+    checkForm();
+}
+
+function checkForm() {
+    const name = document.getElementById('inp-name').value;
+    const phone = document.getElementById('inp-phone').value;
+    const sub = document.getElementById('sel-sub').value;
+    const isPhoneValid = /^[0-9]{10}$/.test(phone.replace(/-/g, ''));
+    if(document.getElementById('phoneErr')) document.getElementById('phoneErr').style.display = (phone && !isPhoneValid) ? 'block' : 'none';
+    document.getElementById('submitBtn').disabled = !(name && isPhoneValid && sub);
+}
+
+function submitForm() {
+    alert('บันทึกข้อมูลเรียบร้อยแล้ว!');
+}
+   
 (function init() {
   const aprilTotal = Object.values(APRIL).reduce((n, v) => n + (v.am !== 'f' ? 1 : 0) + (v.pm !== 'f' ? 1 : 0), 0);
   const dot = '<span style="width:6px;height:6px;background:var(--green);border-radius:50%;display:inline-block;flex-shrink:0;margin-right:2px"></span>';
   document.getElementById('monthMeta').innerHTML = dot + aprilTotal + ' รอบว่าง';
   document.getElementById('prevBtn').disabled = true;
+   // ตั้งค่าเริ่มต้นสำหรับฟอร์ม
+    const provSel = document.getElementById('sel-prov');
+    if(provSel) Object.keys(geoData).forEach(p => provSel.add(new Option(p, p)));
+    
+    const refEl = document.getElementById('refNum');
+    if(refEl) refEl.innerText = 'PV-' + Math.random().toString(36).substr(2, 9).toUpperCase();
+
+    const phoneInp = document.getElementById('inp-phone');
+    const nameInp = document.getElementById('inp-name');
+    if(phoneInp) phoneInp.addEventListener('input', checkForm);
+    if(nameInp) nameInp.addEventListener('input', checkForm);
   renderRegions();
   buildCards('april');
   buildCards('may');
