@@ -210,23 +210,22 @@ body{
 }
 .month-center{display:flex;flex-direction:column;align-items:center;gap:1px}
 .month-label{font-size:var(--t-lg);font-weight:800;color:var(--navy);letter-spacing:-.3px}
-/* ── UPDATED: available slot count — bold green pill ── */
+/* ── UPDATED: available slot count now bold green ── */
 .month-meta{
-  display:inline-flex;align-items:center;gap:5px;
   font-size:var(--t-xs);font-weight:800;
   color:var(--green);
+  text-transform:uppercase;letter-spacing:1px;
   background:var(--green-bg);
-  border:1.5px solid var(--green-bd);
+  border:1px solid var(--green-bd);
   border-radius:20px;
-  padding:2px 12px;
-  letter-spacing:.2px;
+  padding:1px 10px;
 }
 .month-arrow{width:36px;height:36px;border-radius:10px;border:1.5px solid var(--border);background:#fff;display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--navy);transition:all .2s;cursor:pointer}
 .month-arrow:active{transform:scale(.92);background:var(--pale)}
 .month-arrow:disabled{opacity:.3;cursor:not-allowed}
 
 /* ════ DATE CARDS ════ */
-.month-panel{display:none;padding:12px var(--px) 160px;animation:fadeIn .3s ease-out}
+.month-panel{display:none;padding:12px var(--px) 100px;animation:fadeIn .3s ease-out}
 .month-panel.active{display:block}
 @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 
@@ -244,7 +243,7 @@ body{
 .avail-badge.full{background:var(--red-bg);color:var(--red)}
 
 .slot-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.slot-btn{border:1.5px solid var(--border);border-radius:12px;padding:12px 10px;display:flex;flex-direction:column;align-items:center;gap:4px;background:var(--white);transition:all .2s;cursor:pointer;position:relative;overflow:hidden}
+.slot-btn{border:1.5px solid var(--border);border-radius:12px;padding:10px 8px;display:flex;flex-direction:column;align-items:center;gap:2px;background:var(--white);transition:all .2s;cursor:pointer;position:relative;overflow:hidden}
 .slot-btn:active{transform:scale(.96)}
 .slot-btn.selected{border-color:var(--navy);background:var(--sky);box-shadow:0 0 0 2px var(--navy)}
 .slot-btn.av{border-color:rgba(34,197,94,0.3)}
@@ -252,10 +251,10 @@ body{
 .slot-btn.fl{opacity:.55;background:var(--pale);cursor:not-allowed;grayscale:1}
 .slot-period{font-size:var(--t-xs);font-weight:700;color:var(--mid);text-transform:uppercase;letter-spacing:.5px}
 .slot-time{font-size:var(--t-sm);font-weight:700;color:var(--ink);font-feature-settings:'tnum'}
-.slot-tag{font-size:10px;font-weight:800;margin-top:3px;padding:2px 8px;border-radius:6px}
-/* available slot tag: bold green pill */
-.slot-btn.av .slot-tag{color:var(--green);background:var(--green-bg)}
-.slot-btn.lt .slot-tag{color:var(--amber);background:var(--amber-bg)}
+.slot-tag{font-size:10px;font-weight:700;margin-top:2px}
+/* ── UPDATED: available slot tag styled bold green ── */
+.slot-btn.av .slot-tag{color:var(--green);font-weight:800;background:var(--green-bg);border-radius:6px;padding:1px 6px;}
+.slot-btn.lt .slot-tag{color:var(--amber)}
 .slot-btn.fl .slot-tag{color:var(--muted)}
 
 /* ════ STICKY BAR ════ */
@@ -311,12 +310,12 @@ body{
 .submit-btn:disabled{background:var(--muted);opacity:.6;cursor:not-allowed}
 
 /* ════ SUCCESS PAGE ════ */
-.page-success{display:none;padding:32px var(--px) 40px;animation:fadeIn .5s ease-out}
+.page-success{display:none;padding:40px var(--px) 80px;animation:fadeIn .5s ease-out}
 .page-success.show{display:block}
 .success-card{background:#fff;border-radius:24px;padding:32px 24px;text-align:center;box-shadow:var(--shadow-lg);border:1.5px solid var(--border);position:relative;overflow:hidden;margin-bottom:20px}
 .success-icon{width:72px;height:72px;background:var(--green);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:36px;margin:0 auto 20px;box-shadow:0 8px 20px rgba(21,128,61,0.3)}
 .success-title{font-size:var(--t-2xl);font-weight:800;color:var(--navy);margin-bottom:8px;letter-spacing:-.5px}
-.success-desc{font-size:var(--t-base);color:var(--slate);margin-bottom:24px;line-height:1.85}
+.success-desc{font-size:var(--t-base);color:var(--slate);margin-bottom:24px;line-height:1.6}
 
 .ref-box{background:var(--pale);border:2px dashed var(--border-2);border-radius:16px;padding:20px;margin-bottom:24px;position:relative}
 .ref-stripe{position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#8b6914,#f0c040,#f5d87a,#f0c040,#8b6914);background-size:300% 100%;animation:stripe-move 4s linear infinite}
@@ -325,7 +324,7 @@ body{
 /* ── UPDATED: reference label and code styling ── */
 .ref-label-sm{font-size:11px;font-weight:700;color:var(--mid);text-transform:uppercase;letter-spacing:1px;margin-bottom:2px}
 .ref-ref-label{font-size:10px;font-weight:600;color:var(--muted);letter-spacing:.8px;text-transform:uppercase;margin-bottom:1px}
-.ref-code{font-size:15px;font-weight:700;color:var(--navy);font-family:monospace;letter-spacing:1px}
+.ref-code{font-size:20px;font-weight:800;color:var(--navy);font-family:monospace;letter-spacing:1px}
 .ref-escrow{display:flex;align-items:center;gap:6px;background:#fff;padding:6px 12px;border-radius:10px;border:1px solid var(--border)}
 .ref-escrow-text{font-size:10px;font-weight:700;color:var(--green);text-align:left;line-height:1.1}
 .ref-divider{height:1px;background:rgba(0,0,0,0.06);margin-bottom:15px}
@@ -359,43 +358,47 @@ body{
 .tl-name.muted{color:var(--muted)}
 .tl-desc{font-size:11px;color:var(--muted);line-height:1.5;margin-top:1px}
 
-/* ── Admin CTA — primary, dominant ── */
+.copy-card{background:var(--gold-bg);border:1.5px solid var(--gold-lt);border-radius:var(--radius-lg);padding:20px;margin-bottom:16px;text-align:center}
+.copy-card-title{font-size:var(--t-md);font-weight:800;color:#78350f;margin-bottom:6px}
+.copy-card-desc{font-size:var(--t-xs);color:#92400e;margin-bottom:16px;line-height:1.5}
+.copy-btn{width:100%;background:#fff;border:1.5px solid var(--gold-lt);border-radius:12px;height:48px;display:flex;align-items:center;justify-content:center;gap:10px;font-size:var(--t-base);font-weight:700;color:#b8860b;transition:all .2s;margin-bottom:10px}
+.copy-btn:active{transform:scale(.96);background:var(--gold-bg)}
+.copy-btn.copied{background:var(--green);border-color:var(--green);color:#fff}
+
+/* ── NEW: Admin contact button ── */
 .admin-btn{
   width:100%;background:var(--navy);color:#fff;border:none;
-  border-radius:16px;height:60px;
-  display:flex;align-items:center;justify-content:center;gap:10px;
-  font-size:var(--t-lg);font-weight:800;
-  transition:all .2s;cursor:pointer;
-  box-shadow:0 6px 20px rgba(13,42,94,0.40);
-  letter-spacing:-.2px;
+  border-radius:12px;height:52px;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  font-size:var(--t-base);font-weight:700;color:#fff;
+  transition:all .2s;text-decoration:none;
 }
-.admin-btn:active{transform:scale(.97);background:var(--navy-lt)}
+.admin-btn:active{transform:scale(.96);background:var(--navy-lt)}
 
 .summary-card{background:var(--pale);border-radius:16px;padding:20px;text-align:left}
-.summary-title{font-size:var(--t-sm);font-weight:700;color:var(--mid);margin-bottom:14px;text-transform:uppercase;letter-spacing:1px}
-.summary-row{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;gap:16px}
+.summary-title{font-size:var(--t-sm);font-weight:700;color:var(--mid);margin-bottom:12px;text-transform:uppercase;letter-spacing:1px}
+.summary-row{display:flex;justify-content:space-between;margin-bottom:10px;gap:20px}
 .summary-row:last-child{margin-bottom:0}
-.summary-key{font-size:var(--t-sm);color:var(--muted);flex-shrink:0;padding-top:1px}
-.summary-val{font-size:var(--t-sm);font-weight:700;color:var(--navy);text-align:right;word-break:break-word}
+.summary-key{font-size:var(--t-sm);color:var(--muted);flex-shrink:0}
+.summary-val{font-size:var(--t-sm);font-weight:700;color:var(--navy);text-align:right}
 
 .save-warning{display:flex;align-items:center;gap:10px;background:var(--red-bg);border:1px solid var(--red-bd);border-radius:12px;padding:12px;margin-top:20px;text-align:left}
 .warn-icon{font-size:20px;flex-shrink:0}
 .warn-text{font-size:11px;color:var(--red);font-weight:600;line-height:1.4}
 
-.new-btn{width:100%;background:transparent;color:var(--muted);border:1.5px solid var(--border-2);border-radius:14px;height:46px;font-size:var(--t-sm);font-weight:600;margin-top:8px;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:6px;cursor:pointer}
-.new-btn:active{background:var(--pale)}
+.new-btn{width:100%;background:var(--pale);color:var(--mid);border:1.5px solid var(--border);border-radius:14px;height:50px;font-size:var(--t-md);font-weight:700;margin-top:24px;transition:all .2s}
+.new-btn:active{transform:scale(.97)}
 
 /* ── FOOTER ── */
 .page-footer{
   text-align:center;
-  padding:28px var(--px) 32px;
+  padding:clamp(18px,4vw,24px) var(--px) calc(clamp(18px,4vw,24px) + env(safe-area-inset-bottom));
   border-top:1px solid var(--border);
   background:var(--surface);
 }
-.footer-line1{font-size:var(--t-sm);color:var(--slate);font-weight:500;line-height:1.75;margin-bottom:10px;text-align:center}
-.footer-line2{font-size:var(--t-xs);color:var(--muted);font-weight:400;line-height:1.7;margin-bottom:10px;text-align:center}
+.footer-line1{font-size:var(--t-sm);color:var(--slate);font-weight:500;line-height:1.6;margin-bottom:4px}
+.footer-line2{font-size:var(--t-xs);color:var(--muted);font-weight:400;line-height:1.55}
 .footer-brand{font-weight:700;color:var(--navy)}
-.footer-privacy{font-size:9px;color:var(--muted);opacity:.65;line-height:1.55;margin-top:0;text-align:center;letter-spacing:.2px}
 
 .hidden{display:none}
 @keyframes fadeUp{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
@@ -494,7 +497,7 @@ body{
     <button class="month-arrow" id="prevBtn" onclick="switchMonth(-1)">‹</button>
     <div class="month-center">
       <span class="month-label" id="monthLabel">เมษายน 2569</span>
-      <span class="month-meta" id="monthMeta"><span style="width:6px;height:6px;background:var(--green);border-radius:50%;display:inline-block;flex-shrink:0"></span>0 รอบว่าง</span>
+      <span class="month-meta" id="monthMeta">0 รอบว่าง</span>
     </div>
     <button class="month-arrow" id="nextBtn" onclick="switchMonth(1)">›</button>
   </div>
@@ -503,14 +506,7 @@ body{
   <div id="aprilList" class="month-panel active"></div>
   <div id="mayList" class="month-panel"></div>
 
-  <!-- FOOTER (page 1) — static, scrolls with content -->
-  <div class="page-footer">
-    <div class="footer-line1">ดูแลการส่งมอบสินค้าอย่างเป็นระบบ พร้อมประกันความคุ้มครองตลอดเส้นทาง</div>
-    <div class="footer-line2">ข้อมูลของท่านจะถูกจัดเก็บตามนโยบายความเป็นส่วนตัวและมาตรฐานความปลอดภัยของ <span class="footer-brand">PickupVault</span></div>
-    <div class="footer-privacy">นโยบายความเป็นส่วนตัว (Privacy Policy) · ข้อกำหนดการใช้งาน</div>
-  </div>
-
-  <!-- STICKY BAR (fixed, always above footer spacer) -->
+  <!-- STICKY BAR -->
   <div class="sticky-bar" id="stickyBar">
     <div class="sticky-info">
       <span class="sticky-label">รอบที่เลือก</span>
@@ -520,16 +516,22 @@ body{
       ดำเนินการต่อ
       <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3.75 9h10.5M9.75 4.5l4.5 4.5-4.5 4.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </button>
-  </div><!-- end stickyBar -->
-</div><!-- end pageMain -->
+  </div>
+
+  <!-- FOOTER (page 1) -->
+  <div class="page-footer">
+    <div class="footer-line1">ดูแลการส่งมอบสินค้าอย่างเป็นระบบ พร้อมประกันความคุ้มครองตลอดเส้นทาง</div>
+    <div class="footer-line2">ข้อมูลของท่านจะถูกจัดเก็บตามนโยบายความเป็นส่วนตัวและมาตรฐานความปลอดภัยของ <span class="footer-brand">PickupVault</span></div>
+  </div>
+</div>
 
 <!-- SUCCESS PAGE -->
 <div id="pageSuccess" class="page-success">
   <div class="success-card">
     <div class="success-icon">✓</div>
     <!-- UPDATED title -->
-    <h2 class="success-title">ส่งคำขอลงทะเบียนเรียบร้อย</h2>
-    <p class="success-desc">ระบบได้รับข้อมูลแล้ว<br><strong style="color:var(--navy)">กรุณาติดต่อแอดมินเพื่อรับรหัสผู้ขาย (Seller ID)</strong><br>และยืนยันคิวรับสินค้า</p>
+    <h2 class="success-title">ส่งคำขอนัดรับสินค้าเรียบร้อย</h2>
+    <p class="success-desc">ระบบได้รับคำขอของท่านแล้ว กรุณาติดต่อแอดมินเพื่อรับรหัสผู้ขาย (Seller ID) และยืนยันคิวรถ</p>
 
     <div class="ref-box">
       <div class="ref-stripe"></div>
@@ -573,12 +575,8 @@ body{
           <svg viewBox="0 0 14 14" fill="none" width="8" height="8"><circle cx="7" cy="7" r="3" fill="#b45309"/></svg>
         </div>
         <div class="tl-body">
-          <div class="tl-name wait" style="font-weight:800;white-space:nowrap">รอการตรวจสอบสิทธิ์ผู้ขายใหม่</div>
+          <div class="tl-name wait">รอการตรวจสอบสิทธิ์ผู้ขายใหม่</div>
           <div class="tl-desc">กรุณาติดต่อแอดมินเพื่ออนุมัติสิทธิ์รับชำระเงิน</div>
-          <div style="display:inline-flex;align-items:center;gap:4px;margin-top:5px;background:var(--amber-bg);border:1px solid var(--amber-bd);border-radius:6px;padding:2px 8px;font-size:10px;font-weight:700;color:var(--amber)">
-            <svg width="9" height="9" viewBox="0 0 9 9" fill="none"><rect x="1.5" y="4" width="6" height="4.5" rx="1" stroke="#b45309" stroke-width="1"/><path d="M3 4V2.5a1.5 1.5 0 013 0V4" stroke="#b45309" stroke-width="1" stroke-linecap="round"/></svg>
-            ข้อมูลถูกล็อกรอการอนุมัติ
-          </div>
         </div>
       </div>
       <!-- Step 3: Pending -->
@@ -592,16 +590,24 @@ body{
     </div>
   </div>
 
-  <!-- PRIMARY ACTION: single admin button only -->
-  <div style="margin-bottom:16px">
-    <button class="admin-btn" id="adminBtn" onclick="openAdminChat()">
-      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="flex-shrink:0">
-        <path d="M10 1.5C5.36 1.5 1.5 5.36 1.5 10c0 1.55.43 3 1.18 4.24L1.5 18.5l4.26-1.18A8.46 8.46 0 0010 18.5c4.64 0 8.5-3.86 8.5-8.5S14.64 1.5 10 1.5z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
-        <path d="M7 10h.01M10 10h.01M13 10h.01" stroke="white" stroke-width="2" stroke-linecap="round"/>
+  <div class="copy-card">
+    <div class="copy-card-title">📋 แจ้งแอดมินเพื่อยืนยัน</div>
+    <div class="copy-card-desc">กดคัดลอกข้อมูลนัดหมาย จากนั้นนำไปวางในช่องทางที่แอดมินแจ้งไว้</div>
+    <button class="copy-btn" id="copyBtn" onclick="copyBooking()">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0">
+        <rect x="5" y="5" width="9" height="9" rx="2" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2" stroke="currentColor" stroke-width="1.5"/>
+      </svg>
+      <span id="copyBtnLabel">คัดลอกข้อมูลนัดหมาย</span>
+    </button>
+    <!-- UPDATED: Admin contact button with dynamic ref -->
+    <a id="adminBtn" href="#" class="admin-btn" onclick="openAdminChat(event)">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" style="flex-shrink:0">
+        <path d="M9 1.5C4.86 1.5 1.5 4.86 1.5 9c0 1.38.36 2.67.99 3.79L1.5 16.5l3.71-.99A7.44 7.44 0 009 16.5c4.14 0 7.5-3.36 7.5-7.5S13.14 1.5 9 1.5z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+        <path d="M6 9h.01M9 9h.01M12 9h.01" stroke="white" stroke-width="2" stroke-linecap="round"/>
       </svg>
       ติดต่อแอดมินเพื่อรับรหัส Seller ID
-    </button>
-    <div style="text-align:center;margin-top:8px;font-size:10px;color:var(--muted)">กดเพื่อเปิด LINE แอดมินพร้อมข้อความอัตโนมัติ</div>
+    </a>
   </div>
 
   <div class="summary-card">
@@ -619,16 +625,12 @@ body{
     <div class="warn-text">ระบบบันทึกข้อมูลไม่สำเร็จ (Network Error) กรุณาแคปหน้าจอนี้ส่งให้แอดมินเพื่อทำการนัดหมายด้วยตนเอง</div>
   </div>
 
-  <button class="new-btn" onclick="bookNew()">
-    <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 6.5A4.5 4.5 0 016.5 2c1.25 0 2.38.5 3.2 1.3L11.5 5M2 8l1.8 2.2A4.5 4.5 0 006.5 11c2.49 0 4.5-2.01 4.5-4.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
-    ทำการนัดหมายใหม่
-  </button>
+  <button class="new-btn" onclick="bookNew()">ทำการนัดหมายใหม่</button>
 
-  <!-- SUCCESS PAGE FOOTER -->
+  <!-- FOOTER (success page) -->
   <div class="page-footer" style="margin-top:24px">
     <div class="footer-line1">ดูแลการส่งมอบสินค้าอย่างเป็นระบบ พร้อมประกันความคุ้มครองตลอดเส้นทาง</div>
     <div class="footer-line2">ข้อมูลของท่านจะถูกจัดเก็บตามนโยบายความเป็นส่วนตัวและมาตรฐานความปลอดภัยของ <span class="footer-brand">PickupVault</span></div>
-    <div class="footer-privacy">นโยบายความเป็นส่วนตัว (Privacy Policy) · ข้อกำหนดการใช้งาน</div>
   </div>
 </div>
 
@@ -654,7 +656,7 @@ body{
       </div>
 
       <div class="form-group">
-        <label class="form-label">เบอร์โทรศัพท์ที่ติดต่อได้ <span class="req">*</span></label>
+        <label class="form-label">เบอร์โทรศัพท์สำหรับเจ้าหน้าที่ติดต่อ <span class="req">*</span></label>
         <input type="tel" class="form-input" id="inp-phone" placeholder="08x-xxx-xxxx" required>
         <div class="err-msg" id="phoneErr">กรุณาระบุเบอร์โทรศัพท์ 10 หลักให้ถูกต้อง</div>
       </div>
@@ -698,19 +700,18 @@ body{
 
       <!-- UPDATED note field label -->
       <div class="form-group">
-        <label class="form-label">จุดสังเกตหรือหมายเหตุสำหรับเจ้าหน้าที่</label>
+        <label class="form-label">หมายเหตุสำหรับเจ้าหน้าที่ (ถ้ามี)</label>
         <input type="text" class="form-input" id="inp-note" placeholder="เช่น จุดสังเกต, ฝากไว้ที่ป้อมยาม, โทรหาเมื่อถึง">
       </div>
 
       <!-- UPDATED submit button text -->
-      <button type="submit" class="submit-btn" id="submitBtn" disabled>ส่งข้อมูลและตรวจสอบสถานะ</button>
+      <button type="submit" class="submit-btn" id="submitBtn" disabled>ยืนยันข้อมูลนัดรับสินค้า</button>
     </form>
 
     <!-- FOOTER (modal) -->
-    <div style="margin-top:24px;padding-top:16px;border-top:1px solid var(--border);text-align:center">
-      <div style="font-size:11px;color:var(--slate);font-weight:500;line-height:1.7;margin-bottom:7px">ดูแลการส่งมอบสินค้าอย่างเป็นระบบ พร้อมประกันความคุ้มครองตลอดเส้นทาง</div>
-      <div style="font-size:10px;color:var(--muted);line-height:1.65;margin-bottom:6px">ข้อมูลของท่านจะถูกจัดเก็บตามนโยบายความเป็นส่วนตัวและมาตรฐานความปลอดภัยของ <strong style="color:var(--navy)">PickupVault</strong></div>
-      <div style="font-size:9px;color:var(--muted);opacity:.75">นโยบายความเป็นส่วนตัว (Privacy Policy) · ข้อกำหนดการใช้งาน</div>
+    <div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--border);text-align:center">
+      <div class="footer-line1" style="font-size:11px">ดูแลการส่งมอบสินค้าอย่างเป็นระบบ พร้อมประกันความคุ้มครองตลอดเส้นทาง</div>
+      <div class="footer-line2" style="font-size:10px">ข้อมูลของท่านจะถูกจัดเก็บตามนโยบายความเป็นส่วนตัวและมาตรฐานความปลอดภัยของ <span class="footer-brand">PickupVault</span></div>
     </div>
   </div>
 </div>
@@ -8180,6 +8181,7 @@ rawData.forEach(item => {
     if (!ADDR[p][d]) ADDR[p][d] = {};
     ADDR[p][d][s] = z;
 });
+
 /* ══════════════════════════════════════════
    REGIONS DATA
 ══════════════════════════════════════════ */
@@ -8194,7 +8196,6 @@ const REGIONS = [
    BOOKING DATA — เมษายน 2569
 ══════════════════════════════════════════ */
 const APRIL = {
-  28:{am:'f',pm:'l',w:'อังคาร'},
   29:{am:'a',pm:'a',w:'พุธ'},30:{am:'a',pm:'l',w:'พฤหัสบดี'},
 };
 
@@ -8338,8 +8339,7 @@ function switchMonth(dir) {
   document.getElementById('nextBtn').disabled = currentMonth === 1;
   const data = currentMonth === 0 ? APRIL : MAY;
   const total = Object.values(data).reduce((n, v) => n + (v.am !== 'f' ? 1 : 0) + (v.pm !== 'f' ? 1 : 0), 0);
-  const dot = '<span style="width:6px;height:6px;background:var(--green);border-radius:50%;display:inline-block;flex-shrink:0"></span>';
-  document.getElementById('monthMeta').innerHTML = dot + total + ' รอบว่าง';
+  document.getElementById('monthMeta').textContent = total + ' รอบว่าง';
   resetSel();
 }
 
@@ -8575,13 +8575,78 @@ function updateAdminBtn(ref) {
 }
 
 function openAdminChat(e) {
-  if (e && e.preventDefault) e.preventDefault();
-  const msg = 'จองคิวนัดรับในระบบเรียบร้อยแล้วค่ะ (รหัสอ้างอิง: ' + currentRefNum + ') ขอรับรหัสผู้ขายสำหรับสมาชิกใหม่ค่ะ';
-  /* Open LINE chat with auto-text via LINE URL scheme */
-  const lineId = '@668egcab';
-  const encoded = encodeURIComponent(msg);
-  const lineUrl = 'https://line.me/ti/p/~@668egcab' + lineId + '?text=' + encoded;
-  window.open(lineUrl, '_blank');
+  e.preventDefault();
+  const msg = '"จองคิวนัดรับในระบบเรียบร้อยแล้วค่ะ (รหัสอ้างอิง: ' + currentRefNum + ') ขอรับรหัสผู้ขายสำหรับสมาชิกใหม่ค่ะ"';
+  
+  // ไอดีไลน์แอดมิน (ใส่ @ ด้วยตามที่คุณแจ้ง)
+  const lineId = "@668egcab";
+  // ลิงก์สำหรับเปิดหน้าแชท LINE (แบบ Official Account)
+  const lineUrl = "https://line.me/R/ti/p/@668egcab";
+
+  /* 1. คัดลอกข้อความลง Clipboard */
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(msg).then(() => {
+      showAdminCopied();
+      // 2. เมื่อคัดลอกเสร็จ ให้รอ 1 วินาทีแล้วเปิด LINE
+      setTimeout(() => {
+        window.location.href = lineUrl;
+      }, 1000);
+    }).catch(() => {
+      fallbackCopyAdmin(msg);
+      window.location.href = lineUrl;
+    });
+  } else {
+    fallbackCopyAdmin(msg);
+    window.location.href = lineUrl;
+  }
+}
+
+function fallbackCopyAdmin(msg) {
+  const t = document.createElement('textarea');
+  t.value = msg;
+  t.style.cssText = 'position:fixed;opacity:0';
+  document.body.appendChild(t);
+  t.select();
+  document.execCommand('copy');
+  document.body.removeChild(t);
+  showAdminCopied();
+}
+
+function showAdminCopied() {
+  const btn = document.getElementById('adminBtn');
+  const orig = btn.innerHTML;
+  btn.style.background = '#15803d';
+  btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 18 18" fill="none" style="flex-shrink:0"><path d="M3 9l5 5 7-7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> คัดลอกข้อความแล้ว! นำไปวางในแชทแอดมิน';
+  setTimeout(() => {
+    btn.style.background = '';
+    btn.innerHTML = orig;
+  }, 3000);
+}
+
+/* ══════════════════════════════════════════
+   COPY BOOKING TEXT
+══════════════════════════════════════════ */
+function copyBooking() {
+  const btn = document.getElementById('copyBtn');
+  const lbl = document.getElementById('copyBtnLabel');
+  const done = () => {
+    btn.classList.add('copied');
+    lbl.textContent = '✓ คัดลอกแล้ว!';
+    setTimeout(() => { btn.classList.remove('copied'); lbl.textContent = 'คัดลอกข้อมูลนัดหมาย'; }, 2500);
+  };
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(bookingMsg).then(done).catch(fallback);
+  } else { fallback(); }
+  function fallback() {
+    const t = document.createElement('textarea');
+    t.value = bookingMsg;
+    t.style.cssText = 'position:fixed;opacity:0';
+    document.body.appendChild(t);
+    t.select();
+    document.execCommand('copy');
+    document.body.removeChild(t);
+    done();
+  }
 }
 
 /* ══════════════════════════════════════════
@@ -8624,8 +8689,7 @@ document.addEventListener('keydown', e => {
 ══════════════════════════════════════════ */
 (function init() {
   const aprilTotal = Object.values(APRIL).reduce((n, v) => n + (v.am !== 'f' ? 1 : 0) + (v.pm !== 'f' ? 1 : 0), 0);
-  const dot = '<span style="width:6px;height:6px;background:var(--green);border-radius:50%;display:inline-block;flex-shrink:0;margin-right:2px"></span>';
-  document.getElementById('monthMeta').innerHTML = dot + aprilTotal + ' รอบว่าง';
+  document.getElementById('monthMeta').textContent = aprilTotal + ' รอบว่าง';
   document.getElementById('prevBtn').disabled = true;
   renderRegions();
   buildCards('april');
